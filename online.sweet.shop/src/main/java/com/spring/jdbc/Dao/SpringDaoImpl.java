@@ -48,7 +48,7 @@ public class SpringDaoImpl implements SweetDao{
 	        int r=this.jdbcTemplate.update(query,
 	        		sweet.getSweetsname(),sweet.getPrice());
 		
-		return 0;
+		return r;
 	}
 	public int delete(int sweetId) {
 		
@@ -62,6 +62,13 @@ public class SpringDaoImpl implements SweetDao{
 				String query="update sweets set price=? where sweetid=?";
 				 int r=this.jdbcTemplate.update(query,sweet.getPrice(),sweet.getSweetid());
 				return r;
+	}
+	public Sweets getSweet(String sweetname) {
+		String query="Select * from sweets where sweetsname=?";
+		RowMapper<Sweets> rowMapper=new RowMapImplSweets();
+		Sweets sweet =this.jdbcTemplate.queryForObject
+				(query,rowMapper, sweetname);
+		return sweet;
 	}
 	
 	

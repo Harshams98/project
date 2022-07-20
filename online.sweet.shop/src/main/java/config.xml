@@ -20,4 +20,7 @@
 <bean class="com.spring.jdbc.Dao.SpringDaoImpl" name="sweetDao">
 <property name="jdbcTemplate" ref="jdbcTemplate"></property>
 </bean>
+<bean class="com.spring.jdbc.Dao.CustomerDaoimpl" name="customerDao">
+<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+</bean>
 </beans>

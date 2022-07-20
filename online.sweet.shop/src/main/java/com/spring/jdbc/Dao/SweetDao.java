@@ -9,6 +9,8 @@ public interface SweetDao {
 	
 	public Admin getAdmin(String username,String password);
 	
+	public Sweets getSweet(String sweetname);
+	
 	public List<Sweets> getAllSweets();
 	
 	public int insert(Sweets sweet);
